@@ -1,65 +1,154 @@
 #bin/bash
 
+# Color
+
+BLACK="\001\033[1;30m\002"
+RED="\001\033[1;31m\002"
+GREEN="\001\033[1;32m\002"
+YELLOW="\001\033[1;33m\002"
+BLUE="\001\033[1;34m\002"
+PURPLE="\001\033[1;35m\002"
+CYAN="\001\033[1;36m\002"
+WHITE="\001\033[1;37m\002"
+RESET="\001\033[0m\002"
+
 # Message d'acceuil
 
-cat print.txt
-printf "\n\n\n\n"
+chmod 777 print_hello
+./print_hello
 
 # Preparation a l'instalation des modules...
 
-printf "Preparation a l'instalation des modules  ...\n\n\n\n"
-
-printf "installation de curl ..."
+printf "$GREEN"
+printf "\n\n\n===============================================================================================\n"
+printf "\t\t\tPreparation a l'instalation des modules  ...\n"
+printf "===============================================================================================\n\n\n"
+printf "$RESET"
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation de curl ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install curl
-printf "\n\n\n\n installation de dpkg ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation de dpkg ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install dpkg
-printf "\n\n\n\n installation de wget ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation de wget ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install wget
-printf "\n\n\n\n installation de zsh ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation de zsh ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install zsh
-printf "\n\n\n\n installation de git ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation de git ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install git
-printf "\n\n\n\n installation de gcc ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation de gcc ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install gcc
-printf "\n\n\n\n installation de clang ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation de clang ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install clang
-printf "\n\n\n\n installation de valgrind ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation de valgrind ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install valgrind
-printf "\n\n\n\n installation de snap ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation de snap ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install snap
-printf "\n\n\n\n ajout du repo pour grub-customizer ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tajout du repo pour grub-customizer...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer
-printf "\n\n\n\n installation de grub-customizer ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation de grub-customizer...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install grub-customizer
-printf "\n\n\n\n telechargement des themes de boot ..."
-git clone https://github.com/ChrisTitusTech/Top-5-Bootloader-Themes.git $HOME
-printf "\n\n\n\n Changement de la permission de l'install ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\ttelechargement des themes de boot ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
+git clone https://github.com/ChrisTitusTech/Top-5-Bootloader-Themes.git
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tChangement de la permission de l'install ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 chmod 777 $HOME/Top-5-Bootloader-Themes/install.sh
-printf "\n\n\n\n installation du theme de boot ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tinstallation du theme de boot ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo $HOME/Top-5-Bootloader-Themes/install.sh
-printf "\n\n\n\n Ouverture de grub-customizer ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tOuverture de grub-customizer ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo grub-customizer
-printf "\n\n\n\n Installation de OH-My-Zsh ..."
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
 # Preparation a l'instalation des Applications
 
-printf "\n\n\n\n\n\n Preparation de l'installation des Applications ...\n\n\n\n"
+printf "$GREEN"
+printf "\n\n\n===============================================================================================\n"
+printf "\t\t\tPreparation de l'installation des Applications ...\n"
+printf "===============================================================================================\n\n\n"
+printf "$RESET"
 
 #Install de Chrome
 
-printf "Installation de chrome ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tInstallation de chrome ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt-get install -f
-
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tInstallation des extensions chrome ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 google-chrome 'https://chrome.google.com/webstore/detail/adblock-for-youtube/cmedhionkhpnakcndndgjdbohmhepckk?hl=en-US'
 google-chrome 'https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep?hl=en-US'
 google-chrome 'https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en-US'
 google-chrome 'https://chrome.google.com/webstore/detail/super-dark-mode/nlgphodeccebbcnkgmokeegopgpnjfkc?hl=en-US'
 
-printf "\n\n\n\nInstallation de Vscode ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tInstallation de Vscode\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 
 #Install de Vscode
 sudo apt update
@@ -68,7 +157,11 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
 
-printf "\n\n\n\n Installation des extensions de vscode ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tInstallation des extensions de vscode ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 code --install-extension kube.42header
 code --install-extension ms-vscode.cpptools
 code --install-extension adpyke.codesnap
@@ -77,35 +170,83 @@ code --install-extension sdras.night-owl
 code
 
 #Instal de Discord
-printf "\n\n\n\n Installation de Discord ..."
+
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tInstallation de Discord ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 
 sudo snap install discord
 discord &
 
 # Preparation des changements de themes
 
-printf "\n\n\n\n\n Preparation des changements de themes ...\n\n\n\n\n ..."
+printf "$GREEN"
+printf "\n\n\n===============================================================================================\n"
+printf "\t\t\tPreparation des changements de themes ...\n"
+printf "===============================================================================================\n\n\n"
+printf "$RESET"
 
-printf "Installation de gnome-software ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tInstallation de gnome-software ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt install gnome-software
-printf "\n\n\n\n Installation de gnome-tweaks ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tInstallation de gnome-tweaks ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt install gnome-tweaks
-printf "\n\n\n\n suppressions des dossier .icons et .themes si ils existent ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tsuppressions des dossier .icons et .themes si ils existent ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 rm -rf $HOME/.icons
 rm -rf $HOME/.themes
-printf "\n\n\n\n Remplacement des dossier par ceux qui contiennent les themes ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tRemplacement des dossier par ceux qui contiennent les themes ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 mv .icons $HOME
 mv .themes $HOME
-printf "\n\n\n\n Installation de l'extension gnome-shell ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tInstallation des extensions gnome-shell ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt install gnome-shell-extensions
 google-chrome 'https://extensions.gnome.org/extension/1362/custom-hot-corners/'
 google-chrome 'https://extensions.gnome.org/extension/881/screenshot-window-sizer/'
 google-chrome 'https://extensions.gnome.org/extension/19/user-themes/'
 google-chrome 'https://extensions.gnome.org/extension/3740/compiz-alike-magic-lamp-effect/'
 gnome-tweaks
-printf "\n\n\n\n Ajout du repository pour plank ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tAjout du repository pour plank ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-add-repository ppa:ricotz/docky
-printf "\n\n\n\n Installation de plank ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tInstallation de plank ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 sudo apt-get install plank
-printf "Ouverture de plank ..."
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tOuverture de plank ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
 plank --preferences
+printf "$GREEN"
+printf "\n\n\n======================================\n"
+printf "\tInstallation de Oh-My_zsh ...\n"
+printf "======================================\n\n\n"
+printf "$RESET"
+printf "\n\n\n\n Installation de OH-My-Zsh ..."
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
