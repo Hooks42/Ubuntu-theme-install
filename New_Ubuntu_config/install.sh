@@ -18,7 +18,7 @@ chmod 777 print_hello
 ./print_hello
 
 # Preparation a l'instalation des modules...
-
+cd $HOME
 printf "$GREEN"
 printf "\n\n\n===============================================================================================\n"
 printf "\t\t\tPreparation a l'instalation des modules  ...\n"
@@ -95,7 +95,7 @@ printf "\n\n\n======================================\n"
 printf "\ttelechargement des themes de boot ...\n"
 printf "======================================\n\n\n"
 printf "$RESET"
-git clone https://github.com/ChrisTitusTech/Top-5-Bootloader-Themes.git
+git clone https://github.com/ChrisTitusTech/Top-5-Bootloader-Themes.git $HOME
 printf "$GREEN"
 printf "\n\n\n======================================\n"
 printf "\tChangement de la permission de l'install ...\n"
