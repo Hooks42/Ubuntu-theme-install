@@ -99,6 +99,7 @@ printf "\n\n\n======================================\n"
 printf "\tChangement de la permission de l'install ...\n"
 printf "======================================\n\n\n"
 printf "$RESET"
+git clone https://github.com/ChrisTitusTech/Top-5-Bootloader-Themes.git
 chmod 777 /Top-5-Bootloader-Themes/install.sh
 printf "$GREEN"
 printf "\n\n\n======================================\n"
