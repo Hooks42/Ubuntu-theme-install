@@ -18,7 +18,6 @@ chmod 777 print_hello
 ./print_hello
 
 # Preparation a l'instalation des modules...
-cd $HOME
 printf "$GREEN"
 printf "\n\n\n===============================================================================================\n"
 printf "\t\t\tPreparation a l'instalation des modules  ...\n"
@@ -95,19 +94,18 @@ printf "\n\n\n======================================\n"
 printf "\ttelechargement des themes de boot ...\n"
 printf "======================================\n\n\n"
 printf "$RESET"
-git clone https://github.com/ChrisTitusTech/Top-5-Bootloader-Themes.git $HOME
 printf "$GREEN"
 printf "\n\n\n======================================\n"
 printf "\tChangement de la permission de l'install ...\n"
 printf "======================================\n\n\n"
 printf "$RESET"
-chmod 777 $HOME/Top-5-Bootloader-Themes/install.sh
+chmod 777 /Top-5-Bootloader-Themes/install.sh
 printf "$GREEN"
 printf "\n\n\n======================================\n"
 printf "\tinstallation du theme de boot ...\n"
 printf "======================================\n\n\n"
 printf "$RESET"
-sudo $HOME/Top-5-Bootloader-Themes/install.sh
+sudo Top-5-Bootloader-Themes/install.sh
 printf "$GREEN"
 printf "\n\n\n======================================\n"
 printf "\tOuverture de grub-customizer ...\n"
